@@ -120,3 +120,50 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.owl-container {
+  position: fixed;
+  top: 20%;
+  left: -150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 40px;
+  z-index: 999;
+  animation: flyAcross 12s linear infinite;
+}
+
+/* Lechuza */
+.owl {
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.6));
+}
+
+/* Carta */
+.letter {
+  font-size: 25px;
+  animation: flap 0.6s infinite alternate;
+}
+
+/* vuelo */
+@keyframes flyAcross {
+  0% {
+    transform: translateX(0vw) translateY(0px);
+  }
+  25% {
+    transform: translateX(30vw) translateY(-20px);
+  }
+  50% {
+    transform: translateX(60vw) translateY(10px);
+  }
+  75% {
+    transform: translateX(90vw) translateY(-15px);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0px);
+  }
+}
+
+/* pequeño movimiento carta */
+@keyframes flap {
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(10deg); }
+}

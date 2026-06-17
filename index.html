@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocío & Kevin | Nos casamos</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(#1b2b43, #304b68);
+      color: #f6f0e8;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .contenedor {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .lechuza {
+      font-size: 80px;
+      animation: volar 3s ease-in-out infinite;
+    }
+
+    @keyframes volar {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .sobre {
+      background: #f6f0e8;
+      color: #304b68;
+      width: 250px;
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      transition: transform 0.3s;
+    }
+
+    .sobre:hover {
+      transform: scale(1.05);
+    }
+
+    #invitacion {
+      display: none;
+      margin-top: 30px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .fecha {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    #contador {
+      font-size: 1.5rem;
+      line-height: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+  <div class="lechuza">🦉</div>
+
+  <div class="sobre" onclick="abrirInvitacion()">
+    ✉️<br><br>
+    <strong>R & K</strong><br><br>
+    Has recibido una invitación muy especial...
+  </div>
+
+  <div id="invitacion">
+    <h1>¡Nos casamos!</h1>
+
+    <h2>Rocío & Kevin</h2>
+
+    <div class="fecha">
+      3 de abril de 2027
+    </div>
+
+    <div id="contador"></div>
+  </div>
+
+</div>
+
+<script>
+function abrirInvitacion() {
+  document.getElementById("invitacion").style.display = "block";
+}
+
+function actualizarContador() {
+
+  const boda = new Date("April 3, 2027 00:00:00").getTime();
+  const ahora = new Date().getTime();
+
+  const diferencia = boda - ahora;
+
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+  document.getElementById("contador").innerHTML =
+    `⏳ ${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
+}
+
+setInterval(actualizarContador, 1000);
+actualizarContador();
+</script>
+
+</body>
+</html>

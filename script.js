@@ -51,3 +51,17 @@ window.addEventListener("load", () => {
     owl.style.opacity = "1";
   }, 2000);
 });
+const letter = document.getElementById("letter");
+const invite = document.getElementById("invite");
+const owlContainer = document.getElementById("owlContainer");
+
+// Click en el sobre → abre invitación
+letter.addEventListener("click", () => {
+  invite.classList.add("show");
+});
+
+// Opcional: si quieres que desaparezca la lechuza al abrir
+letter.addEventListener("click", () => {
+  owlContainer.style.opacity = "0";
+  owlContainer.style.transition = "1s";
+});

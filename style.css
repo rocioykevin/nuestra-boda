@@ -1,1 +1,94 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(#142238, #2d4b69);
+  color: #f6f0e8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
+.estrellas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.3;
+}
+
+.pantalla-inicial {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.lechuza {
+  font-size: 80px;
+  animation: volar 3s ease-in-out infinite;
+}
+
+@keyframes volar {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.sobre {
+  background: #f6f0e8;
+  color: #2d4b69;
+  width: 350px;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  transition: 0.4s;
+}
+
+.sobre:hover {
+  transform: scale(1.05);
+}
+
+.sello {
+  background: #d4b06a;
+  color: white;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin: auto;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.invitacion {
+  display: none;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 30px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.fecha {
+  font-size: 1.4rem;
+}
+
+#contador {
+  font-size: 2rem;
+  margin: 40px 0;
+}
+
+.mensaje {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}

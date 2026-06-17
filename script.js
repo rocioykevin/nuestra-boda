@@ -41,3 +41,13 @@ function createStars() {
 }
 
 createStars();
+// Aparece la lechuza después de 2 segundos
+window.addEventListener("load", () => {
+  const owl = document.querySelector(".owl-container");
+  owl.style.opacity = "0";
+
+  setTimeout(() => {
+    owl.style.transition = "opacity 2s";
+    owl.style.opacity = "1";
+  }, 2000);
+});

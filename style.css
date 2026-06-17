@@ -167,3 +167,62 @@ body {
   from { transform: rotate(-10deg); }
   to { transform: rotate(10deg); }
 }
+.owl-container {
+  position: fixed;
+  top: 20%;
+  left: -150px;
+  display: flex;
+  gap: 10px;
+  font-size: 45px;
+  z-index: 999;
+  animation: fly 10s linear forwards;
+}
+
+@keyframes fly {
+  0% { transform: translateX(0vw) translateY(0px); }
+  100% { transform: translateX(120vw) translateY(-20px); }
+}
+
+.letter {
+  cursor: pointer;
+  animation: float 1s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(10deg); }
+}
+
+/* INVITACIÓN */
+.invite {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 20, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s ease;
+}
+
+.invite.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.invite-content {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  transform: scale(0.8);
+  animation: pop 1s forwards;
+}
+
+@keyframes pop {
+  to { transform: scale(1); }
+}

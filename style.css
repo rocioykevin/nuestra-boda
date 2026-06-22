@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Georgia, serif;
-  background: linear-gradient(#142238, #2d4b69);
+  background: linear-gradient(#102038, #294564);
   color: #f6f0e8;
   min-height: 100vh;
   overflow-x: hidden;
@@ -14,39 +14,67 @@ body {
   background-image:
     radial-gradient(white 1px, transparent 1px),
     radial-gradient(white 1px, transparent 1px);
-  background-size: 100px 100px;
+  background-size: 120px 120px;
   opacity: 0.3;
 }
 
 .pantalla-inicial {
   text-align: center;
-  padding-top: 100px;
+  padding: 40px 20px;
+}
+
+.hero {
+  position: relative;
+  height: 350px;
+}
+
+.luna {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,220,0.9);
+  box-shadow: 0 0 60px rgba(255,255,220,0.8);
+}
+
+.castillo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    transparent
+  );
 }
 
 .lechuza {
-  font-size: 80px;
-  animation: volar 3s ease-in-out infinite;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-@keyframes volar {
-  0%,100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
+.lechuza img {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255,255,255,0.15);
 }
 
 .sobre {
   background: #f6f0e8;
-  color: #2d4b69;
-  width: 350px;
-  padding: 40px;
-  margin: 40px auto;
+  color: #294564;
+  width: 340px;
+  max-width: 90%;
+  padding: 35px;
+  margin: auto;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
   transition: 0.4s;
 }
 
@@ -55,7 +83,7 @@ body {
 }
 
 .sello {
-  background: #d4b06a;
+  background: #d5b16d;
   color: white;
   width: 80px;
   height: 80px;
@@ -63,7 +91,7 @@ body {
   border-radius: 50%;
   margin: auto;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .invitacion {
@@ -91,138 +119,4 @@ h1 {
 .mensaje {
   font-size: 1.2rem;
   line-height: 1.8;
-}
-body {
-  background: radial-gradient(circle at top, #0b1020, #05060f);
-  overflow: hidden;
-}
-
-/* estrellas */
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle 2s infinite alternate;
-  opacity: 0.6;
-}
-
-@keyframes twinkle {
-  from { opacity: 0.2; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.3); }
-}
-.card {
-  animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.owl-container {
-  position: fixed;
-  top: 20%;
-  left: -150px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 40px;
-  z-index: 999;
-  animation: flyAcross 12s linear infinite;
-}
-
-/* Lechuza */
-.owl {
-  filter: drop-shadow(0 0 10px rgba(0,0,0,0.6));
-}
-
-/* Carta */
-.letter {
-  font-size: 25px;
-  animation: flap 0.6s infinite alternate;
-}
-
-/* vuelo */
-@keyframes flyAcross {
-  0% {
-    transform: translateX(0vw) translateY(0px);
-  }
-  25% {
-    transform: translateX(30vw) translateY(-20px);
-  }
-  50% {
-    transform: translateX(60vw) translateY(10px);
-  }
-  75% {
-    transform: translateX(90vw) translateY(-15px);
-  }
-  100% {
-    transform: translateX(120vw) translateY(0px);
-  }
-}
-
-/* pequeño movimiento carta */
-@keyframes flap {
-  from { transform: rotate(-10deg); }
-  to { transform: rotate(10deg); }
-}
-.owl-container {
-  position: fixed;
-  top: 20%;
-  left: -150px;
-  display: flex;
-  gap: 10px;
-  font-size: 45px;
-  z-index: 999;
-  animation: fly 10s linear forwards;
-}
-
-@keyframes fly {
-  0% { transform: translateX(0vw) translateY(0px); }
-  100% { transform: translateX(120vw) translateY(-20px); }
-}
-
-.letter {
-  cursor: pointer;
-  animation: float 1s infinite alternate;
-}
-
-@keyframes float {
-  from { transform: rotate(-10deg); }
-  to { transform: rotate(10deg); }
-}
-
-/* INVITACIÓN */
-.invite {
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 8, 20, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: 1s ease;
-}
-
-.invite.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.invite-content {
-  background: rgba(255,255,255,0.05);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  backdrop-filter: blur(10px);
-  transform: scale(0.8);
-  animation: pop 1s forwards;
-}
-
-@keyframes pop {
-  to { transform: scale(1); }
 }
